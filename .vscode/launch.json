@@ -1,0 +1,21 @@
+{
+     "version": "0.2.0",
+     "configurations": [
+          {
+               "type": "node",
+               "request": "attach",
+               "name": "Ts Node",
+               "protocol":"inspector",
+               "restart":true,
+               "port": 7001,
+               "address": "localhost",
+               "localRoot": "${workspaceFolder}",
+               "program": "${file}",
+               "sourceMapPathOverrides": {
+                    "/src/*": "${workspaceRoot}/*"
+               },
+               "remoteRoot": "/src/"
+               
+          }
+     ]
+}

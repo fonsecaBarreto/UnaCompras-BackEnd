@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+      "outDir":"./dist",
+      "target": "ES5",
+      "module": "commonjs",                           
+      "lib": ["es6"],
+      "allowJs": true,  
+      "strict": true,      
+      "resolveJsonModule":true ,                         
+      "esModuleInterop": true,
+      "strictNullChecks": false,   
+      "removeComments": true,
+      "skipLibCheck": true,
+      "diagnostics": true,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "sourceMap": true,
+      "rootDirs": ["src", "tests"],
+      "baseUrl": "src",
+      "paths": {
+        "@/*": ["*"],
+        "@/tests/*": ["../tests/*"]
+      }
+    },
+    "typeRoots": [
+      "./@types",
+      "./node_modules/@types"
+    ],
+
+    "include": ["src/**/*", "tests"]
+
+}
