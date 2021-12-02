@@ -1,12 +1,6 @@
-/* 
-     Título: Instanciando de maneira estuturada as variaveis de ambiente.
-     Autor: Lucas Fonseca
-     data: 2021/11/11
-*/
-
 import { config } from "dotenv";
 
-export interface ENV_VARIABLES {
+export interface EnviromentVariables {
      PORT: string,
      NODE_ENV: string
      JWT_SECRET: string,
@@ -22,10 +16,9 @@ export interface ENV_VARIABLES {
           AWS_SECRET_KEY:  string,
           AWS_UPLOADS_BUCKET:  string
      }
-
 }
 
-export default (): ENV_VARIABLES =>{
+export default (): EnviromentVariables =>{
      config();
      return {
           PORT: process.env.PORT || '9000',

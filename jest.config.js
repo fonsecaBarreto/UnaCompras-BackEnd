@@ -1,8 +1,6 @@
-
-
 module.exports = {
  
-  roots: ['<rootDir>/tests'],
+  roots: ['<rootDir>/tests', '<rootDir>/src'],
 
   testTimeout: 90000,
   

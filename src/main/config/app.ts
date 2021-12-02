@@ -1,37 +1,18 @@
-/* 
-     Título: Configuração App Express
-     Autor: Lucas Fonseca
-     data: 2021/11/11
-*/
-
 import express, { Express } from 'express'
-import useMiddlewares from './middlewares'
-import useRoutes from './routes'
-import KnexAdapter from '../../infra/db/KnexAdapter'
-import getKeys, { ENV_VARIABLES } from './keys'
+import useRootMiddlewares from './root_middlewares'
+import getKeys, { EnviromentVariables } from './keys'
+import useV1 from '../V1/index'
 
 export async function setupApp (): Promise<Express>{
 
-     const keys = getKeys()
-
-     await KnexAdapter.open(keys.NODE_ENV);
-
+     const keys: EnviromentVariables = getKeys()
      const app = express()
-
      app.set('keys', keys)
-
-     useMiddlewares(app)
-
-     await useRoutes(app)
-
-     return app
-}
-
-
-export async function closeApp() {
+     useRootMiddlewares(app)
+     app.get("/status", (req, res) => res.json(({env: keys.NODE_ENV})) )
+     await useV1(app)
+     return app;
      
-     await KnexAdapter.close();
-     return
 }
 
 export default setupApp

@@ -8,7 +8,7 @@
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect=0.0.0.0:7001 --respawn --transpile-only --ignore-watch node_modules --no-notify ./src/main/server.ts",
     "build": "rm -rf dist && tsc -p tsconfig-build.json",
     "test": "jest --passWithNoTests --runInBand --no-cache",
-    "test:unit": "npm test -- --watch -c jest-unit-config.js",
+    "test:unit": "npm test -- --watch --silent -c jest-unit-config.js",
     "test:integration": "npm test -- --watch --silent -c jest-integration-config.js",
     "test:ci": "npm test -- --coverage"
   },

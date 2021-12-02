@@ -1,0 +1,48 @@
+
+  /*   const open = ()=>{
+        GlobalDialogStack.push(
+            MakeDialogConfig(({onAction}) => ( 
+            <div>
+                <button onClick={open}> Vamos testar isso daqui</button>
+                <button onClick={GlobalDialogStack.clear}> Clear</button>
+                <button onClick={() => onAction()}>Realizar alguma açãoa</button> 
+            </div>
+            ), (n) => { alert("Voce esta preste a fehcar essa merda");  }, "Tirausdlasd"))  
+
+       GlobalDialogStack.push(MakeNotification( (n) =>{
+            console.log(n)
+            if(n == 0 ){
+                console.log("CONFIRMADO");
+            }else if(n == 1){
+                console.log("CANCELADO");
+            }
+            return -1
+        },["Primeira mesage", "segnsda", "asddasd"],"qualquer", "CONFIRMATION"))
+
+        GlobalDialogStack.push(MakeNotification( (n) =>{
+            console.log(n)
+            if(n == 0 ){
+                console.log("CONFIRMADO");
+            }else if(n == 1){
+                console.log("CANCELADO");
+            }
+            return -1
+        },["Primeira mesage", "segnsda", "asddasd"],"qualquer", "CONFIRMATION"))
+
+ 
+        GlobalDialogStack.push(MakeOptions( (n) =>{
+            console.log(n)
+            return -1
+        },[{label: "Deltar"}, {label: "escolher esse"}]))
+    } */
+    
+    
+            DialogStack.push(DialogStack.Dialog.MakeNotification( (n) =>{
+            console.log(n)
+            if(n == 0 ){
+                console.log("CONFIRMADO");
+            }else if(n == 1){
+                console.log("CANCELADO");
+            }
+            return -1
+        },["Primeira mesage", "segnsda", "asddasd"],"qualquer", "CONFIRMATION"))

@@ -1,19 +1,12 @@
 import getApp from './config/app'
+import { EnviromentVariables } from './config/keys';
 
 async function main() {
-
      const app = await getApp();
-     const keys = app.get('keys')
-
-
+     const keys: EnviromentVariables = app.get('keys')
      app.listen(keys['PORT'], () =>{
-          console.log("....................")
-          console.log(" Server is running")
-          console.log("  - PORT:", keys.PORT)
-          console.log("  - ENV.:", keys.NODE_ENV)
-          console.log("....................\n")
+          console.log("\n Server is running\n  - PORT:", keys.PORT,"\n  - ENV.:", keys.NODE_ENV," \n")
      })
-
 }
 
 main();

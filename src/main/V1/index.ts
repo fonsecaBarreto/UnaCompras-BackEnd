@@ -1,17 +1,17 @@
-import { ENV_VARIABLES } from "../config/keys"
-import { Express, Router } from "express"
-import fs from "fs"
-import path from 'path'
-import './factories/index'
+import { Express } from "express"
 
-export default async (app: Express, keys: ENV_VARIABLES): Promise<void>  => {
-     const router = Router()
-     app.use('/api/v1', router) 
+import SingletonConfig from './factories/singletonConfig'
 
-     const ROUTERS = path.join(__dirname,"routes")
-     await Promise.all(fs.readdirSync(ROUTERS).map( async (file:any) => {
-          if (file.endsWith('.map')) return;
-          (await import(`${ROUTERS}/${file}`)).default(router, keys)
-     }))
+import useRoutes from "./routes"
+import useMiddlewares from "./middlewares"
+
+export default async (app: Express): Promise<void>  => {
+     
+     await SingletonConfig(app.get("keys"))        // Instancia as dependencias 'staticas' da Aplicação
+
+     useMiddlewares(app)
+
+     useRoutes(app) 
+     
 }
   
